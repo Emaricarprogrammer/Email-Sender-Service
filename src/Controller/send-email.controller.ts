@@ -11,12 +11,12 @@ class SendEmailController
     {
         try
         {
-            const {email, subject} = req.body
-            if(!email || !subject)
+            const {email, subject, body} = req.body
+            if(!email || !subject || !body)
             {
                 return res.status(400).json({success: false, statusCode: 400, message: "Informe todos os campos"})
             }
-            const result = await this.service.sender(email, subject, "<h1>Hello</h1>")
+            const result = await this.service.sender(email, subject, body)
             if(!result.success)
             {
                 return res.status(result.statusCode).json(result)
