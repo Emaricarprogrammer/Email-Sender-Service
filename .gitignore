@@ -1,3 +1,17 @@
 node_modules
-dist
+dist/
+
+# Ignora arquivos de lock conflitantes (usando pnpm)
+package-lock.json
+yarn.lock
+
+# Ignora variáveis de ambiente
 .env
+dist
+
+docker/
+
+# Ignora cache e logs
+*.log
+*.pid
+npm-debug.log*

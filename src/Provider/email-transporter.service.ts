@@ -2,6 +2,7 @@ import * as nodemailer from "nodemailer"
 import { IEmailProvider, IMessage } from "../Interfaces/email-provider"
 import dotenv from "dotenv"
 dotenv.config()
+
 import SMTPTransport from "nodemailer/lib/smtp-transport"
 
 class EmailProvider implements IEmailProvider
