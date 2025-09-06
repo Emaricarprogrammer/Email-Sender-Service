@@ -1,4 +1,4 @@
-import { App } from "./app";
+import { app } from "./app";
 import dotenv from "dotenv"
 dotenv.config()
 
@@ -9,12 +9,13 @@ async function Server()
 {
     try
     {
-        await App.listen(port, host, () =>{
+        await app.listen(port, host, () =>{
             console.log(`Server is running on port ${port}`)
         })
     } catch (error: any)
     {
-        console.log(error)    
+        console.log(error)   
+        process.exit(1) 
     }
 }
 Server()
