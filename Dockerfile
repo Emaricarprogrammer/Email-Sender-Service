@@ -23,6 +23,6 @@ COPY --from=builder /email_service/dist ./dist
 COPY --from=builder /email_service/package.json ./
 COPY --from=builder /email_service/node_modules ./node_modules
 
-EXPOSE 5050
+EXPOSE 5030
 
 CMD ["npm","start"]

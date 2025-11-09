@@ -1,5 +1,5 @@
 import { EmailProvider } from "../Provider/email-transporter.service";
-import validator from "validator"
+import * as validator from "validator"
 
 class EmailSenderService
 {
