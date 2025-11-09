@@ -1,27 +1,28 @@
-#Etapa de build
+# Etapa de build
 FROM node:20-alpine AS builder
 
 WORKDIR /email_service
 
-RUN npm install -g pnpm 
+COPY package.json package-lock.json ./
 
-COPY package.json pnpm-lock.yaml ./
-
-RUN pnpm install --frozen-lockfile
+RUN npm install --frozen-lockfile
 
 COPY . .
 
 RUN npm run build
 
-RUN npm prume --prod
+RUN npm prune --prod
 
-#Etapa de execução
-FROM node:22-alpine
+# Etapa de execução
+FROM node:20-alpine
 
 WORKDIR /email_service
 
-COPY --from=builder . .
+# Copiar apenas o essencial da build
+COPY --from=builder /email_service/dist ./dist
+COPY --from=builder /email_service/package.json ./
+COPY --from=builder /email_service/node_modules ./node_modules
 
 EXPOSE 5050
 
-CMD [ "pnpm", "start"]
+CMD ["npm","start"]
