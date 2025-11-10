@@ -3,7 +3,7 @@ import cors from "cors"
 import { emailRoutes } from "./Routes/route"
 
 const app = express()
-const basePath = "/api/v1"
+const basePath = "/api.email-service/v1"
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
