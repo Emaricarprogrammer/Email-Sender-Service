@@ -2,7 +2,7 @@ import { app } from "../app";
 import request from "supertest"
 
 describe("sendEmail", ()=>{
-    it("Should return 200", async()=>{
+    it("Should return 204", async()=>{
         jest.setTimeout(80000)
         const req = await request(app)
         .post("/api.email-service/v1/sendEmail")
@@ -12,5 +12,6 @@ describe("sendEmail", ()=>{
             body: "<h1>So testando<h1/>"
         })
         expect(req.status).toBeTruthy()
+        expect(req.statusCode).toBe(204)
     })
 })

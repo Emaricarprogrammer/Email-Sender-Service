@@ -29,7 +29,7 @@ class EmailSenderService
             {
                 return {success: false, statusCode: 500, message: "Ocorreu um erro ao enviar este email, tente novamente"}
             }
-            return {success: true, statusCode: 200}
+            return {success: true, statusCode: 204}
             } catch (error: any)
             {
                 console.log(error)
