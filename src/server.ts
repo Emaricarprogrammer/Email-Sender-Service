@@ -1,6 +1,6 @@
 import { app } from "./app";
 import dotenv from "dotenv"
-dotenv.config()
+dotenv.config({quiet: true})
 
 const host = "0.0.0.0"
 const port = Number(process.env.PORT) || 5030

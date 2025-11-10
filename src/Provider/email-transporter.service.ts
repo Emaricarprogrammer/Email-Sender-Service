@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer"
 import { IEmailProvider, IMessage } from "../Interfaces/email-provider"
 import dotenv from "dotenv"
-dotenv.config()
+dotenv.config({quiet: true})
 
 import SMTPTransport from "nodemailer/lib/smtp-transport"
 

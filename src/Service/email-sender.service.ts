@@ -25,7 +25,6 @@ class EmailSenderService
                 subject: subject,
                 body: templateForBody
             })
-            console.log(transporter)
             if(!transporter)
             {
                 return {success: false, statusCode: 500, message: "Ocorreu um erro ao enviar este email, tente novamente"}
