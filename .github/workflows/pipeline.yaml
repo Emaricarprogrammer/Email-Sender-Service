@@ -1,7 +1,7 @@
 name: CI/CD PIPELINE
 on:
   push:
-    branch:
+    branches:
       - main
 jobs:
   build:
